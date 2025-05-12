@@ -14,7 +14,7 @@
                 <p>ברוכים הבאים למשחק הידע! לפניכם 9 שאלות העוסקות בשלבי התפתחות הליבידו.</p>
                 <p>בחרו את התשובה הנכונה ביותר לכל שאלה. אם אתם מתקשים, תוכלו להשתמש ברמז.</p>
             </div>
-            <button id="start-button" class="start-button" onclick="startGame()">התחל משחק</button>
+            <button id="start-button" class="start-button">התחל משחק</button>
         </div>
 
         <div id="game-container" style="display: none;">
@@ -38,15 +38,6 @@
         <div id="confetti-container"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-        // קוד בדיקה בסיסי
-        console.log('Script loaded');
-        function startGame() {
-            console.log('Start button clicked');
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('game-container').style.display = 'block';
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html> 
