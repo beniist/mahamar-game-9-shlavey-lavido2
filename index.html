@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>משחק שאלות אמריקאי</title>
+    <title>משחק הידע של שלבי התפתחות הליבידו</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div id="game-container">
-            <h1>משחק שאלות אמריקאי</h1>
+        <div id="welcome-screen">
+            <h1>משחק הידע של שלבי התפתחות הליבידו</h1>
+            <div class="game-description">
+                <p>ברוכים הבאים למשחק הידע! לפניכם 9 שאלות העוסקות בשלבי התפתחות הליבידו.</p>
+                <p>בחרו את התשובה הנכונה ביותר לכל שאלה. אם אתם מתקשים, תוכלו להשתמש ברמז.</p>
+            </div>
+            <button id="start-button" class="start-button">התחל משחק</button>
+        </div>
+
+        <div id="game-container" style="display: none;">
+            <h1>משחק הידע של שלבי התפתחות הליבידו</h1>
             <div id="question-container">
                 <p id="question-text"></p>
                 <div id="answers-container"></div>
