@@ -502,14 +502,119 @@ let currentQuestionIndex = 0;
 let correctAnswers = 0;
 let selectedQuestions = [];
 let currentQuestion = null;
+let soundsPreloaded = false;
 
-// צלילים
-const correctSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3');
-const wrongSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3');
-const victorySound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3');
+// אובייקטי צליל ומערך קיים של צלילים
+const correctSoundUrls = [
+    'https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3',
+    'https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3',
+    'https://assets.mixkit.co/sfx/preview/mixkit-game-success-alert-2039.mp3',
+    'https://assets.mixkit.co/sfx/preview/mixkit-melodic-bonus-collect-1938.mp3',
+    'https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3',
+    'https://assets.mixkit.co/sfx/preview/mixkit-fantasy-game-success-notification-270.mp3'
+];
+
+const wrongSoundUrl = 'https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3';
+const victorySoundUrl = 'https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3';
+
+// מאגר אובייקטי שמע טעונים מראש
+const audioElements = {
+    correct: [],
+    wrong: null,
+    victory: null
+};
+
+// פונקציה לטעינה מוקדמת של הצלילים
+function preloadSounds() {
+    if (soundsPreloaded) return;
+    
+    console.log('טוען צלילים מראש...');
+    
+    // טעינת צלילי תשובה נכונה
+    audioElements.correct = correctSoundUrls.map(url => {
+        const audio = new Audio();
+        audio.src = url;
+        audio.load();
+        return audio;
+    });
+    
+    // טעינת צליל תשובה שגויה
+    audioElements.wrong = new Audio();
+    audioElements.wrong.src = wrongSoundUrl;
+    audioElements.wrong.load();
+    
+    // טעינת צליל ניצחון
+    audioElements.victory = new Audio();
+    audioElements.victory.src = victorySoundUrl;
+    audioElements.victory.load();
+    
+    soundsPreloaded = true;
+    console.log('טעינת הצלילים הושלמה');
+}
+
+// פונקציה להשמעת צליל מהאובייקטים הטעונים מראש
+function playSound(type, index) {
+    if (!soundsPreloaded) {
+        preloadSounds();
+    }
+    
+    let audioElement;
+    
+    if (type === 'correct') {
+        // אם זה צליל תשובה נכונה, קח אחד אקראי מהמערך (או את המבוקש ספציפית)
+        const soundIndex = index !== undefined ? index : Math.floor(Math.random() * audioElements.correct.length);
+        audioElement = audioElements.correct[soundIndex];
+    } else if (type === 'wrong') {
+        audioElement = audioElements.wrong;
+    } else if (type === 'victory') {
+        audioElement = audioElements.victory;
+    }
+    
+    // אם לא מצאנו אלמנט שמע מתאים, צא מהפונקציה
+    if (!audioElement) {
+        console.error('אלמנט שמע לא קיים:', type, index);
+        return;
+    }
+    
+    // נאפס את הצליל לתחילתו לפני שמנגנים אותו שוב
+    try {
+        audioElement.currentTime = 0;
+    } catch (e) {
+        console.log('לא ניתן לאפס את זמן הניגון:', e);
+    }
+    
+    // ננסה להשמיע את הצליל
+    try {
+        console.log('מנסה להשמיע צליל:', type);
+        const playPromise = audioElement.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log('שגיאה בהשמעת צליל:', error);
+                
+                // ניסיון נוסף: יצירת אובייקט אודיו חדש לגיבוי
+                if (type === 'correct') {
+                    const newAudio = new Audio(correctSoundUrls[index || 0]);
+                    newAudio.play().catch(e => console.log('גם הניסיון השני נכשל:', e));
+                } else if (type === 'wrong') {
+                    const newAudio = new Audio(wrongSoundUrl);
+                    newAudio.play().catch(e => console.log('גם הניסיון השני נכשל:', e));
+                } else if (type === 'victory') {
+                    const newAudio = new Audio(victorySoundUrl);
+                    newAudio.play().catch(e => console.log('גם הניסיון השני נכשל:', e));
+                }
+            });
+        }
+    } catch (error) {
+        console.error('שגיאה בהשמעת הצליל:', error);
+    }
+}
 
 // פונקציה להתחלת המשחק
 function startGame() {
+    // טעינה מוקדמת של הצלילים (אם עוד לא נטענו)
+    preloadSounds();
+    
     // מעבר ממסך הפתיחה למסך המשחק
     document.getElementById('welcome-screen').style.display = 'none';
     document.getElementById('game-container').style.display = 'block';
@@ -551,32 +656,64 @@ function checkAnswer(answerIndex) {
     
     if (answerIndex === currentQuestion.correctAnswer) {
         selectedButton.classList.add('correct');
-        correctSound.play();
+        
+        // השמעת צליל אקראי מתוך מערך הצלילים לתשובה נכונה
+        playSound('correct');
+        
         correctAnswers++;
         updateProgress();
         
-        // הצגת הודעה מעודדת
+        // הצגת הודעה מעודדת עם השהייה של 4 שניות
+        const feedbackMessage = getRandomEncouragement();
+        const feedbackElement = createFeedbackElement(feedbackMessage, 'correct-feedback');
+        document.body.appendChild(feedbackElement);
+        
         setTimeout(() => {
-            alert(getRandomEncouragement());
+            document.body.removeChild(feedbackElement);
             if (correctAnswers === 9) {
                 showVictory();
             } else {
                 currentQuestionIndex++;
                 showQuestion();
             }
-        }, 1000);
+        }, 4000); // 4 שניות
     } else {
         selectedButton.classList.add('incorrect');
-        wrongSound.play();
+        playSound('wrong');
+        
         buttons[currentQuestion.correctAnswer].classList.add('correct');
         
-        // הצגת הודעה על תשובה שגויה
+        // הצגת הודעה על תשובה שגויה עם השהייה של 4 שניות
+        const feedbackElement = createFeedbackElement('לא נכון! נסה שוב.', 'incorrect-feedback');
+        document.body.appendChild(feedbackElement);
+        
         setTimeout(() => {
-            alert('לא נכון! נסה שוב.');
+            document.body.removeChild(feedbackElement);
             selectedButton.classList.remove('incorrect');
             buttons[currentQuestion.correctAnswer].classList.remove('correct');
-        }, 1000);
+        }, 4000); // 4 שניות
     }
+}
+
+// פונקציה ליצירת אלמנט פידבק
+function createFeedbackElement(message, className) {
+    const feedbackElement = document.createElement('div');
+    feedbackElement.textContent = message;
+    feedbackElement.className = 'feedback-message ' + className;
+    feedbackElement.style.position = 'fixed';
+    feedbackElement.style.top = '50%';
+    feedbackElement.style.left = '50%';
+    feedbackElement.style.transform = 'translate(-50%, -50%)';
+    feedbackElement.style.padding = '20px 40px';
+    feedbackElement.style.background = className === 'correct-feedback' ? 'rgba(40, 167, 69, 0.9)' : 'rgba(220, 53, 69, 0.9)';
+    feedbackElement.style.color = 'white';
+    feedbackElement.style.borderRadius = '10px';
+    feedbackElement.style.fontSize = '24px';
+    feedbackElement.style.fontWeight = 'bold';
+    feedbackElement.style.zIndex = '1000';
+    feedbackElement.style.textAlign = 'center';
+    feedbackElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    return feedbackElement;
 }
 
 // פונקציה לעדכון התקדמות
@@ -592,16 +729,93 @@ function updateProgress() {
 
 // פונקציה להצגת ניצחון
 function showVictory() {
-    victorySound.play();
+    playSound('victory');
+    
     confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
     });
     
-    setTimeout(() => {
-        alert('כל הכבוד! השלמת את כל השאלות בהצלחה!');
-    }, 1000);
+    // מסתיר את תצוגת המשחק
+    document.getElementById('question-container').style.display = 'none';
+    document.getElementById('hint-container').style.display = 'none';
+    
+    // יוצר אלמנט חדש לכפתורי סיום
+    const endGameContainer = document.createElement('div');
+    endGameContainer.id = 'end-game-container';
+    endGameContainer.style.textAlign = 'center';
+    endGameContainer.style.marginTop = '2rem';
+    
+    // יוצר כותרת ניצחון
+    const victoryTitle = document.createElement('h2');
+    victoryTitle.textContent = 'כל הכבוד! השלמת את כל השאלות בהצלחה!';
+    victoryTitle.style.color = '#1a73e8';
+    victoryTitle.style.marginBottom = '1.5rem';
+    
+    // יוצר כפתור סיום משחק
+    const endGameButton = document.createElement('button');
+    endGameButton.textContent = 'סיום משחק';
+    endGameButton.className = 'game-button';
+    endGameButton.style.marginRight = '1rem';
+    endGameButton.style.padding = '0.75rem 1.5rem';
+    endGameButton.style.background = '#dc3545';
+    endGameButton.style.color = 'white';
+    endGameButton.style.border = 'none';
+    endGameButton.style.borderRadius = '4px';
+    endGameButton.style.cursor = 'pointer';
+    endGameButton.style.fontWeight = 'bold';
+    endGameButton.onclick = closeGame;
+    
+    // יוצר כפתור שחק שוב
+    const playAgainButton = document.createElement('button');
+    playAgainButton.textContent = 'שחק שוב';
+    playAgainButton.className = 'game-button';
+    playAgainButton.style.padding = '0.75rem 1.5rem';
+    playAgainButton.style.background = '#28a745';
+    playAgainButton.style.color = 'white';
+    playAgainButton.style.border = 'none';
+    playAgainButton.style.borderRadius = '4px';
+    playAgainButton.style.cursor = 'pointer';
+    playAgainButton.style.fontWeight = 'bold';
+    playAgainButton.onclick = restartGame;
+    
+    // מוסיף את הכפתורים לקונטיינר
+    endGameContainer.appendChild(victoryTitle);
+    endGameContainer.appendChild(endGameButton);
+    endGameContainer.appendChild(playAgainButton);
+    
+    // מוסיף את הקונטיינר למשחק
+    document.getElementById('game-container').appendChild(endGameContainer);
+}
+
+// פונקציה לסגירת המשחק
+function closeGame() {
+    // הסתרת מסך המשחק והחזרה למסך הפתיחה
+    document.getElementById('game-container').style.display = 'none';
+    document.getElementById('welcome-screen').style.display = 'block';
+    
+    // ניקוי כפתורי הסיום אם קיימים
+    const endGameContainer = document.getElementById('end-game-container');
+    if (endGameContainer) {
+        endGameContainer.remove();
+    }
+}
+
+// פונקציה להפעלת המשחק מחדש
+function restartGame() {
+    // ניקוי כפתורי הסיום
+    const endGameContainer = document.getElementById('end-game-container');
+    if (endGameContainer) {
+        endGameContainer.remove();
+    }
+    
+    // החזרת תצוגת המשחק
+    document.getElementById('question-container').style.display = 'block';
+    document.getElementById('hint-container').style.display = 'block';
+    
+    // אתחול המשחק מחדש
+    startGame();
 }
 
 // פונקציה לקבלת רמז
@@ -625,8 +839,16 @@ function getRandomEncouragement() {
 
 // הוספת מאזיני אירועים
 document.addEventListener('DOMContentLoaded', function() {
+    // מאזינים רגילים
     document.getElementById('hint-button').addEventListener('click', showHint);
     document.getElementById('start-button').addEventListener('click', startGame);
+    
+    // מאזין לטעינת צלילים בעת אינטראקציה ראשונה
+    document.addEventListener('click', function onFirstClick() {
+        preloadSounds();
+        // הסרת המאזין לאחר הפעלתו פעם אחת
+        document.removeEventListener('click', onFirstClick);
+    }, { once: true });
 });
 
 // הסרת הקריאה האוטומטית ל-startGame
