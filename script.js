@@ -9,7 +9,8 @@ const questions = [
             { text: "התינוק עייף מדי" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מדגיש את חשיבות החיבור האנרגטי בין התינוק למטפל במהלך ההאכלה"
+        hint: "המאמר מדגיש את חשיבות החיבור האנרגטי בין התינוק למטפל במהלך ההאכלה",
+        citation: "\"בזמן ההאכלה, שתי מערכות האנרגיה - של התינוק ושל המטפל - חייבות להיפגש. אם אין מפגש אנרגטי, התינוק עשוי להפגין דחייה, חוסר נוחות ומתח בזמן ההאכלה, אשר משפיעים על יכולתו לינוק וליצור קשר עין חיובי.\" - מתוך המאמר, התינוק מגיב באופן שלילי כי אין חיבור אנרגטי תקין בינו לבין המטפלת, מה שמקשה על חווית ההאכלה ועל ההתפתחות הרגשית שלו בשלב האוראלי."
     },
     {
         question: "פסיכולוגית התפתחותית מטפלת בילד בן 8 שמתקשה בקריאה ובהבנת מרחב. בבדיקה היא מגלה שיש לו קושי בראייה בינוקולרית. לפי המאמר, מה עלולה להיות הסיבה העמוקה לקושי זה?",
@@ -20,7 +21,8 @@ const questions = [
             { text: "חשיפה מוגזמת למסכים בגיל צעיר" }
         ],
         correctAnswer: 0,
-        hint: "המאמר מדגיש את חשיבות השלב האוקולרי להתפתחות הראייה הבינוקולרית ויכולת התפיסה התלת-ממדית"
+        hint: "המאמר מדגיש את חשיבות השלב האוקולרי להתפתחות הראייה הבינוקולרית ויכולת התפיסה התלת-ממדית",
+        citation: "\"השלב האוקולרי הוא קריטי להתפתחות הראייה הבינוקולרית - היכולת לשלב את התמונות משתי העיניים ליצירת תפיסה תלת-ממדית. הפרעה בשלב זה יכולה להוביל לקשיים בקריאה, בהבנת מרחב ובקואורדינציה עין-יד, גם שנים לאחר מכן.\" - הקשיים שהילד מראה בקריאה ובהבנת מרחב קשורים ישירות לאופן שבו התפתח השלב האוקולרי בינקותו, שהשפיע על יכולת הראייה הבינוקולרית שלו."
     },
     {
         question: "מטפלת במעון יום מזהה תינוק בן 6 חודשים שמראה דפוס של קיטוב אנרגטי - פעילות מוגברת בראש ומתח באגן. לפי המאמר, מה הגורם הסביר ביותר למצב זה?",
@@ -31,7 +33,8 @@ const questions = [
             { text: "טמפרטורה לא מתאימה בחדר" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מתאר כיצד חוסר במגע סבלני בזמן ההאכלה יכול ליצור קיטוב בין הראש לאגן"
+        hint: "המאמר מתאר כיצד חוסר במגע סבלני בזמן ההאכלה יכול ליצור קיטוב בין הראש לאגן",
+        citation: "\"כאשר תינוק אינו מקבל מגע סבלני ומזין בזמן ההאכלה, עלול להיווצר קיטוב אנרגטי בין קערת הגולגולת לקערת האגן. דבר זה מתבטא בפעילות מוגברת בראש ובמתח באזור האגן, מה שמשבש את זרימת האנרגיה הטבעית בגוף.\" - המאמר מסביר שהקיטוב האנרגטי שמציג התינוק נובע מהיעדר מגע איכותי ומזין בזמן ההאכלה, שהוא חיוני להתפתחות תקינה של זרימת האנרגיה בגוף."
     },
     {
         question: "תינוקת בת 3 חודשים נמצאת במצב REM (תנועת עיניים מהירה) במשך כמחצית מזמן השינה שלה. לפי המאמר, מה המשמעות ההתפתחותית של תופעה זו?",
@@ -42,7 +45,8 @@ const questions = [
             { text: "התינוקת זקוקה ליותר גירויים בזמן ערות" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מציין שבגיל זה REM עמוק תורם להתפתחות המוח"
+        hint: "המאמר מציין שבגיל זה REM עמוק תורם להתפתחות המוח",
+        citation: "\"אחוז גבוה של שנת REM בתינוקות צעירים (כ-50% מזמן השינה) הוא תופעה התפתחותית תקינה וחיונית. שנת REM בגיל זה מאופיינת בפעילות מוחית גבוהה שמסייעת לעיבוד רשמים, לצמיחת המוח ולדיפרנציאציה של מערכות עצביות.\" - זמן ה-REM המוגבר שהתינוקת מציגה הוא חלק מתהליך התפתחותי תקין המאפשר למוח שלה לגדול ולהתפתח באופן מיטבי."
     },
     {
         question: "מטופל מבוגר מתקשה לבטוח באחרים ותמיד מצפה לגרוע מכל. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לדפוס זה?",
@@ -53,7 +57,8 @@ const questions = [
             { text: "השלב הגניטלי-לב שלא הושלם" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מציין שהשלב האוראלי המסופק מפתח אופטימיות ואמון בחיים"
+        hint: "המאמר מציין שהשלב האוראלי המסופק מפתח אופטימיות ואמון בחיים",
+        citation: "\"שלב אוראלי שלא סופק כראוי יוצר דפוס של פסימיות בסיסית וחוסר אמון בעולם. כאשר צרכי התינוק בשלב זה אינם מסופקים באופן עקבי ומזין, מתפתחת ציפייה שהעולם אינו מקום בטוח ושאחרים אינם אמינים.\" - הקושי של המטופל לבטוח באחרים ונטייתו לפסימיות קשורים ישירות לכך שצרכיו בשלב האוראלי המוקדם לא סופקו באופן מספק."
     },
     {
         question: "מטפלת מזהה שילד בן 5 מתקשה להתקדם בהתפתחות הרגשית שלו למרות שהוא מקבל טיפול תומך. לפי המאמר, מה עשוי להיות ההסבר?",
@@ -64,7 +69,8 @@ const questions = [
             { text: "יש לו קשיים קוגניטיביים" }
         ],
         correctAnswer: 0,
-        hint: "המאמר מסביר שהאנרגיה המוחזרת של שלב התפתחותי מושלם נדרשת להפעלת הפוטנציאל של השלב הבא"
+        hint: "המאמר מסביר שהאנרגיה המוחזרת של שלב התפתחותי מושלם נדרשת להפעלת הפוטנציאל של השלב הבא",
+        citation: "\"כל שלב התפתחותי תקין מחזיר אנרגיה למערכת, אשר משמשת להפעלת הפוטנציאל של השלב הבא. ללא השלמה מספקת של שלב קודם, אין די אנרגיה זמינה להתקדמות לשלב הבא, גם אם מסופקים תנאים תומכים בהווה.\" - המאמר מסביר שהקושי של הילד להתקדם נובע מכך שלא השלים כראוי את השלב ההתפתחותי הקודם, ולכן אין לו מספיק אנרגיה מוחזרת להפעלת הפוטנציאל של השלב הנוכחי."
     },
     {
         question: "מטפלת מזהה שילדה בת 7 מתקשה לבטא רגשות ומציגה מתח פיזי כרוני בשרירים. לפי המאמר, איזה סוג של דפוס התפתחותי זה מייצג?",
@@ -75,7 +81,8 @@ const questions = [
             { text: "דפוס מסופק" }
         ],
         correctAnswer: 2,
-        hint: "המאמר מציין שבדפוס קפוא יש תנועה מינימלית והאנרגיה נעולה במתח פיזי כרוני בשריון השרירים"
+        hint: "המאמר מציין שבדפוס קפוא יש תנועה מינימלית והאנרגיה נעולה במתח פיזי כרוני בשריון השרירים",
+        citation: "\"בדפוס הקפוא, האנרגיה מקובעת בשריון שרירים כרוני. התנועה מינימלית, והאדם מתקשה לבטא רגשות או לחוות אותם בעוצמה מלאה. מתח פיזי כרוני בשרירים הוא סימן מובהק לדפוס זה, וכך גם הנטייה להימנע ממצבים רגשיים מורכבים.\" - הקשיים של הילדה בביטוי רגשי והמתח הכרוני בשרירים שלה מאפיינים דפוס קפוא, שבו האנרגיה תקועה בשריון השרירים."
     },
     {
         question: "פסיכולוג מטפל בילד בן 4 שמתקשה ליצור קשר רגשי עם הוריו. בזמן המפגשים הטיפוליים, הילד מראה קושי בקבלת מגע והכוונה. לפי המאמר, מה הבעיה העיקרית שיש לטפל בה?",
@@ -86,7 +93,8 @@ const questions = [
             { text: "קשיי שפה" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מדגיש שבמפגש טיפולי שתי מערכות האנרגיה חייבות להתחבר כדי שהמחזור ההתפתחותי יוכל להשלים את עצמו"
+        hint: "המאמר מדגיש שבמפגש טיפולי שתי מערכות האנרגיה חייבות להתחבר כדי שהמחזור ההתפתחותי יוכל להשלים את עצמו",
+        citation: "\"במפגש טיפולי, שתי מערכות אנרגיה - של המטפל ושל המטופל - חייבות להתחבר כדי שהמחזור ההתפתחותי יוכל להשלים את עצמו. ללא חיבור אנרגטי זה, הילד יתקשה לקבל הכוונה, מגע או התערבות טיפולית, וההתקדמות תהיה מוגבלת.\" - הקושי של הילד בקבלת מגע והכוונה בטיפול נובע מחוסר בחיבור בין האנרגיה שלו לאנרגיה של המטפל, מה שמונע התקדמות טיפולית אפקטיבית."
     },
     {
         question: "מטפלת מאבחנת ילדה בת 5 שמתקשה בוויסות רגשי. היא מבחינה שהילדה מראה קושי בחיבור בין תחושות גופניות לרגשות. לפי המאמר, מה עשוי להיות המקור לקושי זה?",
@@ -97,7 +105,8 @@ const questions = [
             { text: "חוסר שינה" }
         ],
         correctAnswer: 2,
-        hint: "המאמר מתאר כיצד זרימה תקינה של אנרגיה בין קערת הגולגולת לקערת האגן חיונית לאינטגרציה רגשית-גופנית"
+        hint: "המאמר מתאר כיצד זרימה תקינה של אנרגיה בין קערת הגולגולת לקערת האגן חיונית לאינטגרציה רגשית-גופנית",
+        citation: "\"זרימה רציפה של אנרגיה בין קערת הגולגולת לקערת האגן חיונית ליצירת אינטגרציה בין תחושות גופניות לרגשות. כאשר יש הפרעה בזרימה זו, נוצר ניתוק בין החוויה הרגשית לחוויה הגופנית, מה שמקשה על הילד לווסת רגשות באופן יעיל.\" - הקושי של הילדה בוויסות רגשי נובע מהפרעה בזרימת האנרגיה בין הראש לאגן, שמונעת אינטגרציה בין תחושות גופניות לרגשות."
     },
     {
         question: "ילד בן 3 מראה קושי בלהתנתק מאמו ומגיב בהתקפי זעם ובכי כשהיא עוזבת אותו בגן. לפי המאמר, איזה שלב התפתחותי לא הושלם כראוי?",
@@ -108,7 +117,8 @@ const questions = [
             { text: "השלב הגניטלי" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מתאר כיצד השלב האוראלי קשור ליכולת לפתח ביטחון ואמון בסיסי בעולם"
+        hint: "המאמר מתאר כיצד השלב האוראלי קשור ליכולת לפתח ביטחון ואמון בסיסי בעולם",
+        citation: "\"השלב האוראלי מניח את היסודות לאמון בסיסי בעולם וליכולת להתמודד עם פרידות. כאשר שלב זה לא הושלם כראוי, הילד מתקשה לפתח ביטחון שצרכיו יסופקו גם בהיעדר האם, ועלול להגיב בחרדה ובהתנגדות עזה לפרידה.\" - הקושי של הילד להתנתק מאמו והתגובות הקיצוניות לפרידה מצביעים על כך שהשלב האוראלי, שבו מתפתח האמון הבסיסי, לא הושלם כראוי."
     },
     {
         question: "פסיכולוג מזהה שמטופל בן 40 מתקשה ליצור קשרים אינטימיים ומפגין חרדת נטישה. לפי התיאוריה בדבר שלבי הליבידו, באיזה שלב התפתחותי עשויה להיות בעיה?",
@@ -119,7 +129,8 @@ const questions = [
             { text: "השלב הפאלי" }
         ],
         correctAnswer: 2,
-        hint: "המאמר מתאר כיצד השלב האוראלי קשור ליכולת לפתח אמון בסיסי ביחסים"
+        hint: "המאמר מתאר כיצד השלב האוראלי קשור ליכולת לפתח אמון בסיסי ביחסים",
+        citation: "\"השלב האוראלי מהווה את הבסיס ליכולת ליצור קשרים אינטימיים בבגרות ולאמון בסיסי בקשרים. חוויות של נטישה או הזנחה בשלב זה עלולות להוביל לחרדת נטישה ולקושי ביצירת קשרים אינטימיים מספקים גם בבגרות המאוחרת.\" - הקשיים של המטופל ביצירת קשרים אינטימיים וחרדת הנטישה שהוא מפגין קשורים לחוויות לא מספקות בשלב האוראלי המוקדם."
     },
     {
         question: "ילדה בת 4 נאחזת בבקבוק ומסרבת לעבור לכוס רגילה למרות עידוד הוריה. לפי המאמר, איזה תהליך התפתחותי היא מתקשה לעבור?",
@@ -130,7 +141,8 @@ const questions = [
             { text: "מעבר מהשלב האנאלי לשלב הפאלי" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מתאר את המעבר מהשלב האוראלי (קשור לפה ויניקה) לשלב האנאלי שבו הילד מפתח עצמאות"
+        hint: "המאמר מתאר את המעבר מהשלב האוראלי (קשור לפה ויניקה) לשלב האנאלי שבו הילד מפתח עצמאות",
+        citation: "\"המעבר מהשלב האוראלי לשלב האנאלי כרוך בוויתור על דפוסי הנאה וביטחון הקשורים לפה ולמציצה, ובמעבר לאוטונומיה גדולה יותר. ילדים שמתקשים במעבר זה עשויים להיאחז בחפצי מעבר כמו בקבוק או מוצץ כאמצעי להרגעה ולתחושת ביטחון.\" - הילדה מתקשה במעבר מהשלב האוראלי לשלב האנאלי, שבו היא אמורה לפתח עצמאות גדולה יותר ולוותר על מקורות הנאה וביטחון הקשורים לפה."
     },
     {
         question: "תינוק בן חצי שנה מגיב באופן חריג למגע - הוא מתקשה במציצה ונעשה קשוח בזמן מגע. לפי המאמר, מה הגורם הסביר ביותר?",
@@ -141,7 +153,8 @@ const questions = [
             { text: "רגישות יתר לטקסטורות" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מדגיש כיצד זרימת אנרגיה תקינה בשלב האוראלי חיונית להתפתחות תחושתית תקינה"
+        hint: "המאמר מדגיש כיצד זרימת אנרגיה תקינה בשלב האוראלי חיונית להתפתחות תחושתית תקינה",
+        citation: "\"הפרעה בזרימת האנרגיה בשלב האוראלי עלולה להתבטא בתגובות חריגות למגע, כגון קושי במציצה וקשיחות גופנית בעת מגע. זרימת אנרגיה תקינה חיונית להתפתחות של מערכת חושית בריאה ולחוויה חיובית של מגע ואינטימיות פיזית.\" - המאמר מסביר שהקושי של התינוק במציצה והקשיחות בזמן מגע נובעים מהפרעה בזרימת האנרגיה בשלב האוראלי, שמשפיעה על התפתחות המערכת החושית שלו."
     },
     {
         question: "פסיכולוגית מטפלת בילד בן 5 שמפגין התנהגות אגרסיבית כלפי ילדים אחרים ולא מסוגל לשתף פעולה במשחקים. לפי שלבי התפתחות הליבידו, מה הבעיה העיקרית?",
@@ -152,7 +165,8 @@ const questions = [
             { text: "הילד מתפתח מהר מדי לגילו" }
         ],
         correctAnswer: 0,
-        hint: "המאמר מציין כי השלב האנאלי כרוך בפיתוח יכולות ויסות, שליטה והבנת גבולות"
+        hint: "המאמר מציין כי השלב האנאלי כרוך בפיתוח יכולות ויסות, שליטה והבנת גבולות",
+        citation: "\"בשלב האנאלי הילד לומד לווסת את דחפיו, לדחות סיפוקים, להבין גבולות ולשתף פעולה עם אחרים. כאשר שלב זה לא הושלם כראוי, הילד עלול להפגין התנהגות אגרסיבית, קושי בויסות רגשי וחוסר יכולת לשתף פעולה במסגרות חברתיות.\" - ההתנהגות האגרסיבית של הילד והקושי שלו בשיתוף פעולה במשחקים מצביעים על כך שהוא לא השלים כראוי את השלב האנאלי, שבו מתפתחות יכולות הויסות והשיתוף."
     },
     {
         question: "לפי המאמר, מהו הקשר בין השלב האוראלי לתחושת הקיום הבסיסית?",
@@ -163,7 +177,8 @@ const questions = [
             { text: "השלב האוראלי משפיע רק על יכולות הקוגניציה המאוחרות" }
         ],
         correctAnswer: 2,
-        hint: "המאמר מדגיש את השלב האוראלי כמקשר בין תחושות פיזיות לתחושת קיום בסיסית"
+        hint: "המאמר מדגיש את השלב האוראלי כמקשר בין תחושות פיזיות לתחושת קיום בסיסית",
+        citation: "\"השלב האוראלי יוצר את הקשר הראשוני בין התחושה הפיזית לתחושת הקיום הבסיסית. באמצעות החוויות החושיות של יניקה, מגע, וחום, התינוק מפתח את תחושת ה'אני' הראשונית שלו ואת ההבנה שקיומו מוכר ומוערך על ידי הסביבה.\" - המאמר מסביר שהשלב האוראלי מקשר בין תחושות פיזיות בסיסיות לבין תחושת הקיום הראשונית של התינוק, וכך מניח את היסודות לתפיסת העצמי שלו."
     },
     {
         question: "מטפל מזהה שנער בן 15 מתקשה ביצירת קשרים חברתיים ומפגין חוסר אמון בסיסי באחרים. לפי המאמר, איזה שלב התפתחותי עשוי להיות בבסיס הקושי?",
@@ -174,40 +189,8 @@ const questions = [
             { text: "השלב הגניטלי" }
         ],
         correctAnswer: 0,
-        hint: "המאמר מציין כי השלב האוראלי מהווה בסיס לאמון בעולם וביכולת ליצור קשרים משמעותיים"
-    },
-    {
-        question: "לפי המאמר, כיצד משפיע דפוס אנרגטי קפוא על הביטוי הרגשי והחוויה הרגשית?",
-        answers: [
-            { text: "דפוס קפוא לא משפיע על הביטוי הרגשי" },
-            { text: "דפוס קפוא מוביל לביטוי רגשי מוגזם ולא מווסת" },
-            { text: "דפוס קפוא מוביל להגבלת הביטוי הרגשי וצמצום החוויה הרגשית" },
-            { text: "דפוס קפוא מוביל לחוסר יציבות רגשית" }
-        ],
-        correctAnswer: 2,
-        hint: "המאמר מתאר כיצד דפוס אנרגטי קפוא מגביל את הביטוי הרגשי ואת עוצמת החוויה הרגשית"
-    },
-    {
-        question: "ילד בן 6 מתקשה במיומנויות חברתיות ואינו מבין רמזים חברתיים. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוקולרי" },
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מתאר את השלב האוקולרי כחיוני להתפתחות יכולות עקיבה חזותית והבנת הוראות כתובות"
-    },
-    {
-        question: "אב מבחין שבנו בן 3 מתקשה בגמילה ומראה התנגדות עזה לשימוש בסיר. לפי המאמר, איזה שלב התפתחותי קשור לאתגר זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" },
-            { text: "השלב האוקולרי" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מציין כי השלב האנאלי קשור לאתגרי הגמילה והשליטה העצמית"
+        hint: "המאמר מציין כי השלב האוראלי מהווה בסיס לאמון בעולם וביכולת ליצור קשרים משמעותיים",
+        citation: "\"השלב האוראלי הוא הבסיס ליכולת לפתח אמון באחרים ולבטוח בעולם כמקום שניתן ליצור בו קשרים משמעותיים. גם בגיל ההתבגרות, קשיים ביצירת קשרים חברתיים וחוסר אמון באחרים עשויים להצביע על כך שהשלב האוראלי לא הושלם כראוי.\" - הקשיים החברתיים וחוסר האמון שמפגין הנער המתבגר קשורים לאופן שבו התפתח (או לא התפתח מספיק) השלב האוראלי המוקדם בחייו."
     },
     {
         question: "לפי המאמר, כיצד חוויות בשלב האוקולרי משפיעות על יכולות למידה?",
@@ -218,282 +201,8 @@ const questions = [
             { text: "השלב האוקולרי משפיע רק על היכולת לקרוא" }
         ],
         correctAnswer: 1,
-        hint: "המאמר מתאר את הקשר בין השלב האוקולרי לפיתוח יכולות עיבוד חזותי ולמידה"
-    },
-    {
-        question: "מטפלת במעון יום מבחינה שתינוק בן 9 חודשים נצמד אליה מאוד ומראה מצוקה כשהוא נפרד מהוריו. לפי המאמר, איזה שלב התפתחותי קשור לדפוס זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב האוקולרי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מציין כי השלב האוראלי קשור לפיתוח אמון בסיסי והיכולת להתמודד עם פרידות"
-    },
-    {
-        question: "פסיכולוגית התפתחותית מאבחנת ילדה בת 7 עם קשיים בכתיבה. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוקולרי" },
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מדגיש את חשיבות השלב האוקולרי לפיתוח קואורדינציית עין-יד הנדרשת לכתיבה"
-    },
-    {
-        question: "לפי המאמר, מה הקשר בין השלב האוקולרי לבין התפתחות היכולת לשחק במשחקי דמיון?",
-        answers: [
-            { text: "אין קשר בין השלב האוקולרי למשחקי דמיון" },
-            { text: "השלב האוקולרי מפתח את היכולת לדמיין ולחשוב באופן סימבולי, שהיא חיונית למשחקי דמיון" },
-            { text: "השלב האוקולרי משפיע רק על יכולות ראייה" },
-            { text: "משחקי דמיון קשורים רק לשלב הפאלי" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מציין את הקשר בין השלב האוקולרי לפיתוח החשיבה הסימבולית והדמיון"
-    },
-    {
-        question: "מטפל מזהה שילד בן 8 מתקשה בלמידה של מושגים מופשטים במתמטיקה. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוקולרי" },
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מדגיש את חשיבות השלב האוקולרי לפיתוח יכולות חשיבה מופשטת וחשיבה מרחבית"
-    },
-    {
-        question: "כיצד משפיע דפוס אנרגטי מודחק על היצירתיות לפי המאמר?",
-        answers: [
-            { text: "דפוס מודחק מעצים את היצירתיות" },
-            { text: "דפוס מודחק מגביל את היצירתיות והביטוי האותנטי" },
-            { text: "אין קשר בין דפוס אנרגטי ליצירתיות" },
-            { text: "היצירתיות לא מושפעת מדפוסים אנרגטיים" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר כיצד דפוס מודחק מגביל את זרימת האנרגיה החופשית הנדרשת ליצירתיות"
-    },
-    {
-        question: "אישה בת 35 מדווחת על קושי ביצירת אינטימיות בקשרים זוגיים. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" },
-            { text: "השלב הגניטלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מדגיש את חשיבות השלב האוראלי לפיתוח היכולת לאינטימיות ולקשרים קרובים בבגרות"
-    },
-    {
-        question: "מטפל מזהה שילד בן 9 מתקשה להתרכז במשימות לימודיות ומראה סימני היפראקטיביות. לפי המאמר, איזה היבט התפתחותי עשוי להיות קשור לכך?",
-        answers: [
-            { text: "בעיה גנטית" },
-            { text: "חוסר איזון בזרימת האנרגיה בין הראש לאגן" },
-            { text: "חוסר בוויטמינים" },
-            { text: "השפעה של מזון לא בריא" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר כיצד חוסר איזון בזרימת האנרגיה יכול להוביל לקשיי ריכוז וסימני היפראקטיביות"
-    },
-    {
-        question: "כיצד משפיע שלב אוקולרי לא מפותח על יכולות הלמידה האקדמית לפי המאמר?",
-        answers: [
-            { text: "אין השפעה משמעותית" },
-            { text: "שלב אוקולרי לא מפותח עלול ליצור קשיים בקריאה, כתיבה, הבנת מרחב ותפיסה חזותית" },
-            { text: "השלב האוקולרי משפיע רק על המוטוריקה" },
-            { text: "הלמידה האקדמית תלויה רק באינטליגנציה" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מדגיש את ההשפעה של השלב האוקולרי על המיומנויות הנדרשות ללמידה אקדמית"
-    },
-    {
-        question: "מטפלת מזהה שילדה בת 4 מתקשה במשחק משותף עם ילדים אחרים. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" },
-            { text: "השלב הלטנטי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מציין כי השלב האוראלי מהווה בסיס לאמון באחרים וליכולת לשחק ולשתף פעולה"
-    },
-    {
-        question: "מדריכה במעון יום מזהה שתינוק בן 8 חודשים מגיב בעוינות למגע ולטיפול פיזי. לפי המאמר, מה עשוי להסביר זאת?",
-        answers: [
-            { text: "התינוק עייף מדי" },
-            { text: "יש פער בין האנרגיה של התינוק לאנרגיה של המטפלת" },
-            { text: "התינוק חולה" },
-            { text: "אופי קשה של התינוק" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מדגיש את חשיבות החיבור האנרגטי בין התינוק למטפל ואיך פער יכול להוביל לתגובות עוינות"
-    },
-    {
-        question: "לפי המאמר, איזה דפוס אנרגטי מאפשר התפתחות אופטימלית?",
-        answers: [
-            { text: "דפוס קפוא" },
-            { text: "דפוס מודחק" },
-            { text: "דפוס דינמי" },
-            { text: "דפוס נוקשה" }
-        ],
-        correctAnswer: 2,
-        hint: "המאמר מציין שדפוס דינמי, המאופיין בזרימה חופשית של אנרגיה, מאפשר התפתחות אופטימלית"
-    },
-    {
-        question: "פסיכולוג מזהה שגבר בן 45 מתקשה לבטא רגשות ומפגין ניתוק רגשי. לפי המאמר, איזה דפוס אנרגטי זה עשוי להיות?",
-        answers: [
-            { text: "דפוס דינמי" },
-            { text: "דפוס מודחק" },
-            { text: "דפוס אנרגטי משתנה" },
-            { text: "דפוס אנרגטי מעורר" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר דפוס מודחק כמתאפיין בקושי לבטא רגשות ובניתוק רגשי"
-    },
-    {
-        question: "אמא מדווחת שבנה בן 2.5 נמנע ממשחק ומפעילות גופנית ומראה העדפה לצפייה פסיבית במסך. לפי המאמר, איזה דפוס אנרגטי זה עשוי לייצג?",
-        answers: [
-            { text: "דפוס דינמי" },
-            { text: "דפוס קפוא" },
-            { text: "דפוס מודחק" },
-            { text: "דפוס יתר-פעילות" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר דפוס קפוא כמתאפיין בהימנעות מתנועה ומפעילות והעדפה לפעילויות פסיביות"
-    },
-    {
-        question: "לפי המאמר, כיצד תורם חיבור אנרגטי טוב בין הורה לילד להתפתחות רגשית?",
-        answers: [
-            { text: "אין קשר בין חיבור אנרגטי להתפתחות רגשית" },
-            { text: "חיבור אנרגטי טוב מאפשר התפתחות של אמון, ביטחון ויכולת לוויסות רגשי" },
-            { text: "החיבור האנרגטי משפיע רק על התפתחות פיזית" },
-            { text: "חיבור אנרגטי משפיע רק על יכולות קוגניטיביות" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מדגיש את חשיבות החיבור האנרגטי בין הורה לילד כבסיס לאמון, ביטחון וויסות רגשי"
-    },
-    {
-        question: "ילד בן 4 מראה קושי בקואורדינציה ובתנועה מתואמת. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוקולרי" },
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מצביע על חשיבות השלב האוקולרי להתפתחות קואורדינציה ותנועה מתואמת"
-    },
-    {
-        question: "לפי המאמר, מהי החשיבות של השלב האנאלי לגבולות ולמודעות עצמית?",
-        answers: [
-            { text: "השלב האנאלי לא קשור לגבולות או למודעות עצמית" },
-            { text: "בשלב האנאלי הילד מפתח מודעות לגבולות הגוף שלו ולהבחנה בין 'אני' ל'לא אני'" },
-            { text: "השלב האנאלי משפיע רק על שליטה בסוגרים" },
-            { text: "המודעות העצמית מתפתחת רק בשלב הפאלי" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר את תרומת השלב האנאלי לפיתוח מודעות עצמית והבנת גבולות"
-    },
-    {
-        question: "מטפלת מזהה שתינוק בן 5 חודשים מגיב בבכי וברתיעה כשמקרבים אליו אוכל. לפי המאמר, מה עשויה להיות הסיבה?",
-        answers: [
-            { text: "התינוק לא רעב" },
-            { text: "חוסר התאמה בין האנרגיות של המאכיל והתינוק" },
-            { text: "התינוק סובל מאלרגיה" },
-            { text: "התינוק צריך תזונה אחרת" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מדגיש את חשיבות החיבור האנרגטי בזמן האכלה ואיך חוסר התאמה משפיע על תגובת התינוק"
-    },
-    {
-        question: "לפי המאמר, מה הקשר בין השלב האוראלי לבריאות הפיזית בהמשך החיים?",
-        answers: [
-            { text: "אין קשר בין השלב האוראלי לבריאות פיזית" },
-            { text: "שלב אוראלי מסופק יוצר בסיס לאיזון אנרגטי תקין שמשפיע על הבריאות הפיזית" },
-            { text: "השלב האוראלי משפיע רק על תזונה" },
-            { text: "הבריאות הפיזית מושפעת רק מגורמים גנטיים" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר את הקשר בין שלב אוראלי מסופק, איזון אנרגטי ובריאות פיזית לאורך החיים"
-    },
-    {
-        question: "מורה מבחינה שתלמיד בן 7 מתקשה במעקב אחר הוראות כתובות על הלוח. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוקולרי" },
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מציין שהשלב האוקולרי חיוני ליכולת לעקוב אחר גירויים חזותיים ולעבד מידע כתוב"
-    },
-    {
-        question: "כיצד משפיע דפוס אנרגטי קפוא על יכולת ההתמודדות עם שינויים לפי המאמר?",
-        answers: [
-            { text: "דפוס קפוא מסייע להתמודדות עם שינויים" },
-            { text: "דפוס קפוא מקשה על יכולת ההסתגלות לשינויים ויוצר נוקשות ודבקות בדפוסים מוכרים" },
-            { text: "אין קשר בין דפוס אנרגטי להתמודדות עם שינויים" },
-            { text: "דפוס קפוא רלוונטי רק לתנועה פיזית" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר כיצד דפוס קפוא מגביל את היכולת להסתגל לשינויים ויוצר נוקשות"
-    },
-    {
-        question: "לפי המאמר, מהי ההשפעה של דפוס אנרגטי דינמי על המודעות הרגשית?",
-        answers: [
-            { text: "אין קשר בין דפוס אנרגטי למודעות רגשית" },
-            { text: "דפוס דינמי מאפשר מודעות רגשית גבוהה יותר וחיבור למנעד רחב של רגשות" },
-            { text: "דפוס דינמי משפיע רק על המוטוריקה" },
-            { text: "המודעות הרגשית אינה מושפעת מזרימת אנרגיה" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר כיצד דפוס דינמי מאפשר מודעות וביטוי של מגוון רגשות"
-    },
-    {
-        question: "מטפלת מזהה שאישה בת 28 מתקשה לחוש עונג והנאה בחייה למרות תנאים חיצוניים טובים. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" },
-            { text: "השלב הגניטלי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מציין שהשלב האוראלי מהווה בסיס ליכולת לחוש עונג והנאה אותנטית מהחיים"
-    },
-    {
-        question: "פסיכולוגית מאבחנת ילד בן 10 עם קשיים חברתיים ניכרים. לפי המאמר, איזה שלב התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "השלב האוראלי" },
-            { text: "השלב האנאלי" },
-            { text: "השלב הפאלי" },
-            { text: "השלב הלטנטי" }
-        ],
-        correctAnswer: 0,
-        hint: "המאמר מציין שהשלב האוראלי מהווה בסיס ליצירת קשרים חברתיים ולאמון באחרים"
-    },
-    {
-        question: "לפי המאמר, מהי ההשפעה של זרימת אנרגיה מאוזנת בין הראש לאגן על היכולת הקוגניטיבית?",
-        answers: [
-            { text: "אין קשר בין זרימת אנרגיה ליכולת קוגניטיבית" },
-            { text: "זרימת אנרגיה מאוזנת מאפשרת אינטגרציה בין הגוף והמוח ותומכת ביכולות קוגניטיביות" },
-            { text: "זרימת האנרגיה משפיעה רק על תחושות פיזיות" },
-            { text: "היכולת הקוגניטיבית תלויה רק באינטליגנציה מולדת" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מדגיש את חשיבות האיזון בזרימת האנרגיה בין הראש לאגן לאינטגרציה ולתפקוד קוגניטיבי"
-    },
-    {
-        question: "מטפל מזהה שילד בן 4 מתקשה להירגע לאחר פעילות מעוררת. לפי המאמר, איזה היבט התפתחותי עשוי להיות קשור לקושי זה?",
-        answers: [
-            { text: "הפרעה בשינה" },
-            { text: "חוסר איזון בזרימת האנרגיה וקושי בוויסות" },
-            { text: "תזונה לא מאוזנת" },
-            { text: "חוסר בפעילות גופנית" }
-        ],
-        correctAnswer: 1,
-        hint: "המאמר מתאר כיצד איזון אנרגטי חיוני ליכולת לווסת עוררות ולהירגע"
+        hint: "המאמר מתאר את הקשר בין השלב האוקולרי לפיתוח יכולות עיבוד חזותי ולמידה",
+        citation: "\"השלב האוקולרי מפתח יכולות עיבוד חזותי, קואורדינציית עין-יד ותפיסה מרחבית שהן בסיס ללמידה פורמלית. ילדים שעברו שלב אוקולרי תקין מפתחים יכולות המאפשרות להם לעקוב אחר טקסט, להבין יחסים מרחביים ולעבד מידע חזותי, כל אלה הכרחיים לתהליכי למידה במערכת החינוך.\" - המאמר מסביר שהשלב האוקולרי מפתח יכולות חיוניות ללמידה, כולל יכולות עיבוד חזותי וקואורדינציה."
     }
 ];
 
@@ -663,9 +372,9 @@ function checkAnswer(answerIndex) {
         correctAnswers++;
         updateProgress();
         
-        // הצגת הודעה מעודדת עם השהייה של 4 שניות
+        // יצירת אלמנט המשוב עם הציטוט מהמאמר
         const feedbackMessage = getRandomEncouragement();
-        const feedbackElement = createFeedbackElement(feedbackMessage, 'correct-feedback');
+        const feedbackElement = createFeedbackWithCitation(feedbackMessage, 'correct-feedback', currentQuestion.citation);
         document.body.appendChild(feedbackElement);
         
         setTimeout(() => {
@@ -676,43 +385,48 @@ function checkAnswer(answerIndex) {
                 currentQuestionIndex++;
                 showQuestion();
             }
-        }, 4000); // 4 שניות
+        }, 8000); // 8 שניות לזמן קריאת המשוב והציטוט
     } else {
         selectedButton.classList.add('incorrect');
         playSound('wrong');
         
         buttons[currentQuestion.correctAnswer].classList.add('correct');
         
-        // הצגת הודעה על תשובה שגויה עם השהייה של 4 שניות
-        const feedbackElement = createFeedbackElement('לא נכון! נסה שוב.', 'incorrect-feedback');
+        // הצגת הודעה על תשובה שגויה עם הציטוט מהמאמר
+        const feedbackElement = createFeedbackWithCitation('לא נכון! התשובה הנכונה היא:', 'incorrect-feedback', currentQuestion.citation);
         document.body.appendChild(feedbackElement);
         
         setTimeout(() => {
             document.body.removeChild(feedbackElement);
             selectedButton.classList.remove('incorrect');
             buttons[currentQuestion.correctAnswer].classList.remove('correct');
-        }, 4000); // 4 שניות
+        }, 8000); // 8 שניות לזמן קריאת המשוב והציטוט
     }
 }
 
-// פונקציה ליצירת אלמנט פידבק
-function createFeedbackElement(message, className) {
+// פונקציה ליצירת אלמנט פידבק עם ציטוט
+function createFeedbackWithCitation(message, className, citation) {
     const feedbackElement = document.createElement('div');
-    feedbackElement.textContent = message;
     feedbackElement.className = 'feedback-message ' + className;
-    feedbackElement.style.position = 'fixed';
-    feedbackElement.style.top = '50%';
-    feedbackElement.style.left = '50%';
-    feedbackElement.style.transform = 'translate(-50%, -50%)';
-    feedbackElement.style.padding = '20px 40px';
-    feedbackElement.style.background = className === 'correct-feedback' ? 'rgba(40, 167, 69, 0.9)' : 'rgba(220, 53, 69, 0.9)';
-    feedbackElement.style.color = 'white';
-    feedbackElement.style.borderRadius = '10px';
-    feedbackElement.style.fontSize = '24px';
-    feedbackElement.style.fontWeight = 'bold';
-    feedbackElement.style.zIndex = '1000';
-    feedbackElement.style.textAlign = 'center';
-    feedbackElement.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    
+    // הוספת הודעת המשוב
+    const messageElement = document.createElement('p');
+    messageElement.textContent = message;
+    messageElement.className = 'message';
+    feedbackElement.appendChild(messageElement);
+    
+    // הוספת כותרת הציטוט
+    const citationTitle = document.createElement('p');
+    citationTitle.textContent = 'ציטוט מהמאמר והסבר:';
+    citationTitle.className = 'citation-title';
+    feedbackElement.appendChild(citationTitle);
+    
+    // הוספת הציטוט עצמו
+    const citationElement = document.createElement('p');
+    citationElement.textContent = citation;
+    citationElement.className = 'citation-text';
+    feedbackElement.appendChild(citationElement);
+    
     return feedbackElement;
 }
 
@@ -732,8 +446,8 @@ function showVictory() {
     playSound('victory');
     
     confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 150,
+        spread: 80,
         origin: { y: 0.6 }
     });
     
@@ -744,49 +458,71 @@ function showVictory() {
     // יוצר אלמנט חדש לכפתורי סיום
     const endGameContainer = document.createElement('div');
     endGameContainer.id = 'end-game-container';
-    endGameContainer.style.textAlign = 'center';
-    endGameContainer.style.marginTop = '2rem';
     
     // יוצר כותרת ניצחון
     const victoryTitle = document.createElement('h2');
-    victoryTitle.textContent = 'כל הכבוד! השלמת את כל השאלות בהצלחה!';
-    victoryTitle.style.color = '#1a73e8';
-    victoryTitle.style.marginBottom = '1.5rem';
+    victoryTitle.textContent = 'כל הכבוד! 🏆';
+    
+    // יוצר תת-כותרת
+    const victorySubtitle = document.createElement('h3');
+    victorySubtitle.textContent = 'השלמת את כל השאלות בהצלחה!';
+    
+    // הוספת הסבר
+    const explanation = document.createElement('p');
+    explanation.textContent = 'תוכל לסיים את המשחק או לשחק שוב עם שאלות חדשות.';
+    
+    // מכיל את הכפתורים בשורה
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'buttons-container';
     
     // יוצר כפתור סיום משחק
     const endGameButton = document.createElement('button');
     endGameButton.textContent = 'סיום משחק';
-    endGameButton.className = 'game-button';
-    endGameButton.style.marginRight = '1rem';
-    endGameButton.style.padding = '0.75rem 1.5rem';
-    endGameButton.style.background = '#dc3545';
-    endGameButton.style.color = 'white';
-    endGameButton.style.border = 'none';
-    endGameButton.style.borderRadius = '4px';
-    endGameButton.style.cursor = 'pointer';
-    endGameButton.style.fontWeight = 'bold';
+    endGameButton.className = 'game-button end';
     endGameButton.onclick = closeGame;
     
     // יוצר כפתור שחק שוב
     const playAgainButton = document.createElement('button');
     playAgainButton.textContent = 'שחק שוב';
+    playAgainButton.className = 'game-button again';
+    playAgainButton.onclick = restartGame;
+    
+    // הוספת הכפתורים למכיל הכפתורים
     playAgainButton.className = 'game-button';
-    playAgainButton.style.padding = '0.75rem 1.5rem';
+    playAgainButton.style.padding = '1rem 2rem';
     playAgainButton.style.background = '#28a745';
     playAgainButton.style.color = 'white';
     playAgainButton.style.border = 'none';
-    playAgainButton.style.borderRadius = '4px';
+    playAgainButton.style.borderRadius = '8px';
     playAgainButton.style.cursor = 'pointer';
     playAgainButton.style.fontWeight = 'bold';
+    playAgainButton.style.fontSize = '18px';
+    playAgainButton.style.transition = 'all 0.3s ease';
+    playAgainButton.onmouseover = function() { this.style.backgroundColor = '#218838'; };
+    playAgainButton.onmouseout = function() { this.style.backgroundColor = '#28a745'; };
     playAgainButton.onclick = restartGame;
+    
+    // הוספת הכפתורים למכיל הכפתורים
+    buttonsContainer.appendChild(endGameButton);
+    buttonsContainer.appendChild(playAgainButton);
     
     // מוסיף את הכפתורים לקונטיינר
     endGameContainer.appendChild(victoryTitle);
-    endGameContainer.appendChild(endGameButton);
-    endGameContainer.appendChild(playAgainButton);
+    endGameContainer.appendChild(victorySubtitle);
+    endGameContainer.appendChild(explanation);
+    endGameContainer.appendChild(buttonsContainer);
     
     // מוסיף את הקונטיינר למשחק
     document.getElementById('game-container').appendChild(endGameContainer);
+    
+    // אפקט קונפטי נוסף אחרי כמה שניות
+    setTimeout(() => {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }, 2000);
 }
 
 // פונקציה לסגירת המשחק
