@@ -372,40 +372,36 @@ function checkAnswer(answerIndex) {
         correctAnswers++;
         updateProgress();
         
-        // יצירת אלמנט המשוב עם הציטוט מהמאמר
+        // יצירת אלמנט המשוב עם הציטוט מהמאמר וכפתור המשך
         const feedbackMessage = getRandomEncouragement();
-        const feedbackElement = createFeedbackWithCitation(feedbackMessage, 'correct-feedback', currentQuestion.citation);
-        document.body.appendChild(feedbackElement);
-        
-        setTimeout(() => {
-            document.body.removeChild(feedbackElement);
+        const feedbackElement = createFeedbackWithCitation(feedbackMessage, 'correct-feedback', currentQuestion.citation, () => {
             if (correctAnswers === 9) {
                 showVictory();
             } else {
                 currentQuestionIndex++;
                 showQuestion();
             }
-        }, 8000); // 8 שניות לזמן קריאת המשוב והציטוט
+        });
+        
+        document.body.appendChild(feedbackElement);
     } else {
         selectedButton.classList.add('incorrect');
         playSound('wrong');
         
         buttons[currentQuestion.correctAnswer].classList.add('correct');
         
-        // הצגת הודעה על תשובה שגויה עם הציטוט מהמאמר
-        const feedbackElement = createFeedbackWithCitation('לא נכון! התשובה הנכונה היא:', 'incorrect-feedback', currentQuestion.citation);
-        document.body.appendChild(feedbackElement);
-        
-        setTimeout(() => {
-            document.body.removeChild(feedbackElement);
+        // הצגת הודעה על תשובה שגויה עם הציטוט מהמאמר וכפתור המשך
+        const feedbackElement = createFeedbackWithCitation('לא נכון! התשובה הנכונה היא:', 'incorrect-feedback', currentQuestion.citation, () => {
             selectedButton.classList.remove('incorrect');
             buttons[currentQuestion.correctAnswer].classList.remove('correct');
-        }, 8000); // 8 שניות לזמן קריאת המשוב והציטוט
+        });
+        
+        document.body.appendChild(feedbackElement);
     }
 }
 
 // פונקציה ליצירת אלמנט פידבק עם ציטוט
-function createFeedbackWithCitation(message, className, citation) {
+function createFeedbackWithCitation(message, className, citation, onContinue) {
     const feedbackElement = document.createElement('div');
     feedbackElement.className = 'feedback-message ' + className;
     
@@ -426,6 +422,21 @@ function createFeedbackWithCitation(message, className, citation) {
     citationElement.textContent = citation;
     citationElement.className = 'citation-text';
     feedbackElement.appendChild(citationElement);
+    
+    // הוספת כפתור המשך
+    const continueButton = document.createElement('button');
+    continueButton.textContent = 'המשך';
+    continueButton.className = 'continue-button';
+    
+    // מגדיר אירוע לחיצה על כפתור ההמשך
+    continueButton.addEventListener('click', function() {
+        document.body.removeChild(feedbackElement);
+        if (onContinue) {
+            onContinue();
+        }
+    });
+    
+    feedbackElement.appendChild(continueButton);
     
     return feedbackElement;
 }
