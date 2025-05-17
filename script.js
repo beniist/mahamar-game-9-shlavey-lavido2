@@ -635,8 +635,10 @@ function showPuzzlePart(partNumber) {
     part.className = 'puzzle-part';
     part.style.width = '100%';
     part.style.height = 'auto';
-    part.style.border = '1px solid #ccc';
-    part.style.borderRadius = '4px';
+    part.style.border = 'none';
+    part.style.borderRadius = '0';
+    part.style.margin = '0';
+    part.style.boxShadow = 'none';
     
     // חישוב המיקום ברשת
     const row = Math.floor(index / 3);
