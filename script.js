@@ -233,11 +233,11 @@ const audioElements = {
     victory: null
 };
 
-// מערך של שמות קבצי הפאזל לפי הסדר הנכון (משמאל לימין בכל שורה)
+// מערך של שמות קבצי הפאזל לפי הסדר הנכון (שורות בסדר רגיל, בכל שורה מימין לשמאל)
 const puzzlePartsFilenames = [
-    'hani_part_0_0.png', 'hani_part_0_1.png', 'hani_part_0_2.png',
-    'hani_part_1_0.png', 'hani_part_1_1.png', 'hani_part_1_2.png',
-    'hani_part_2_0.png', 'hani_part_2_1.png', 'hani_part_2_2.png'
+    'hani_part_0_2.png', 'hani_part_0_1.png', 'hani_part_0_0.png',
+    'hani_part_1_2.png', 'hani_part_1_1.png', 'hani_part_1_0.png',
+    'hani_part_2_2.png', 'hani_part_2_1.png', 'hani_part_2_0.png'
 ];
 
 // פונקציה לטעינה מוקדמת של הצלילים
