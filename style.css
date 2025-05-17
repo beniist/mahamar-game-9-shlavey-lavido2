@@ -222,6 +222,23 @@ h1 {
     overflow-y: auto;
     direction: rtl;
     font-family: Arial, sans-serif;
+    min-width: 600px;
+}
+
+.feedback-content {
+    padding-right: 20px;
+}
+
+.feedback-puzzle-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-puzzle-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .correct-feedback {

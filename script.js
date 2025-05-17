@@ -407,30 +407,59 @@ function createFeedbackWithCitation(message, className, citation, onContinue) {
     const feedbackElement = document.createElement('div');
     feedbackElement.className = 'feedback-message ' + className;
     
+    // יצירת מיכל לפאזל
+    const puzzleContainer = document.createElement('div');
+    puzzleContainer.className = 'feedback-puzzle-container';
+    puzzleContainer.style.position = 'absolute';
+    puzzleContainer.style.top = '10px';
+    puzzleContainer.style.left = '10px';
+    puzzleContainer.style.width = '25%';
+    puzzleContainer.style.height = 'auto';
+    puzzleContainer.style.display = 'grid';
+    puzzleContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    puzzleContainer.style.gap = '1px';
+    puzzleContainer.style.backgroundColor = '#f0f0f0';
+    puzzleContainer.style.padding = '2px';
+    puzzleContainer.style.borderRadius = '4px';
+    
+    // הוספת חלקי הפאזל הקיימים
+    const existingParts = document.querySelectorAll('.puzzle-part');
+    existingParts.forEach(part => {
+        const partClone = part.cloneNode(true);
+        partClone.style.width = '100%';
+        partClone.style.height = 'auto';
+        partClone.style.border = 'none';
+        puzzleContainer.appendChild(partClone);
+    });
+    
+    // הוספת מיכל לתוכן
+    const contentContainer = document.createElement('div');
+    contentContainer.className = 'feedback-content';
+    contentContainer.style.marginRight = 'calc(25% + 20px)'; // מרווח עבור הפאזל
+    
     // הוספת הודעת המשוב
     const messageElement = document.createElement('p');
     messageElement.textContent = message;
     messageElement.className = 'message';
-    feedbackElement.appendChild(messageElement);
+    contentContainer.appendChild(messageElement);
     
     // הוספת כותרת הציטוט
     const citationTitle = document.createElement('p');
     citationTitle.textContent = 'ציטוט מהמאמר והסבר:';
     citationTitle.className = 'citation-title';
-    feedbackElement.appendChild(citationTitle);
+    contentContainer.appendChild(citationTitle);
     
     // הוספת הציטוט עצמו
     const citationElement = document.createElement('p');
     citationElement.textContent = citation;
     citationElement.className = 'citation-text';
-    feedbackElement.appendChild(citationElement);
+    contentContainer.appendChild(citationElement);
     
     // הוספת כפתור המשך
     const continueButton = document.createElement('button');
     continueButton.textContent = 'המשך';
     continueButton.className = 'continue-button';
     
-    // מגדיר אירוע לחיצה על כפתור ההמשך
     continueButton.addEventListener('click', function() {
         document.body.removeChild(feedbackElement);
         if (onContinue) {
@@ -438,7 +467,11 @@ function createFeedbackWithCitation(message, className, citation, onContinue) {
         }
     });
     
-    feedbackElement.appendChild(continueButton);
+    contentContainer.appendChild(continueButton);
+    
+    // הוספת המיכלים לאלמנט הראשי
+    feedbackElement.appendChild(puzzleContainer);
+    feedbackElement.appendChild(contentContainer);
     
     return feedbackElement;
 }
