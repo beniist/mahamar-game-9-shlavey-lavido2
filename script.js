@@ -4,7 +4,7 @@ const questions = [
         question: "מטפלת במעון יום מבחינה שתינוק בן 4 חודשים מגיב באופן חריג בזמן ההאכלה - הוא נמנע ממגע עין, מסרב לינוק ומתוח מאוד. מה עלול להיות הגורם העיקרי לכך לפי המאמר?",
         answers: [
             { text: "התינוק סובל מקוליק" },
-            { text: "האנרגיה של התינוק אינה נפגשת עם האנרגיה של המטפלת בזמן ההאכלה" },
+            { text: "האנרגיה של התינוק אינה נפגשת עם האנרגיה של המטפל בזמן ההאכלה" },
             { text: "התינוק אלרגי לחלב" },
             { text: "התינוק עייף מדי" }
         ],
@@ -232,6 +232,13 @@ const audioElements = {
     wrong: null,
     victory: null
 };
+
+// מערך של שמות קבצי הפאזל לפי הסדר הנכון (משמאל לימין בכל שורה)
+const puzzlePartsFilenames = [
+    'hani_part_0_0.png', 'hani_part_0_1.png', 'hani_part_0_2.png',
+    'hani_part_1_0.png', 'hani_part_1_1.png', 'hani_part_1_2.png',
+    'hani_part_2_0.png', 'hani_part_2_1.png', 'hani_part_2_2.png'
+];
 
 // פונקציה לטעינה מוקדמת של הצלילים
 function preloadSounds() {
@@ -619,10 +626,12 @@ function showPuzzlePart(partNumber) {
     
     const grid = puzzleContainer.querySelector('.puzzle-grid');
     
-    // הוספת החלק החדש
+    // הוספת החלק החדש לפי הסדר
+    const index = partNumber - 1;
+    if (index < 0 || index >= puzzlePartsFilenames.length) return;
     const part = document.createElement('img');
-    part.src = `files/puzzle_parts/part_${partNumber}.png`;
-    part.alt = `חלק ${partNumber} של הפאזל`;
+    part.src = `files/${puzzlePartsFilenames[index]}`;
+    part.alt = `חלק ${index + 1} של הפאזל`;
     part.className = 'puzzle-part';
     part.style.width = '100%';
     part.style.height = 'auto';
@@ -630,8 +639,8 @@ function showPuzzlePart(partNumber) {
     part.style.borderRadius = '4px';
     
     // חישוב המיקום ברשת
-    const row = Math.floor((partNumber - 1) / 3);
-    const col = (partNumber - 1) % 3;
+    const row = Math.floor(index / 3);
+    const col = index % 3;
     part.style.gridRow = row + 1;
     part.style.gridColumn = col + 1;
     
