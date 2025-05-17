@@ -372,7 +372,9 @@ function checkAnswer(answerIndex) {
         correctAnswers++;
         updateProgress();
         
-        // יצירת אלמנט המשוב עם הציטוט מהמאמר וכפתור המשך
+        // הצגת חלק הפאזל החדש
+        showPuzzlePart(correctAnswers);
+        
         const feedbackMessage = getRandomEncouragement();
         const feedbackElement = createFeedbackWithCitation(feedbackMessage, 'correct-feedback', currentQuestion.citation, () => {
             if (correctAnswers === 9) {
@@ -462,71 +464,52 @@ function showVictory() {
         origin: { y: 0.6 }
     });
     
-    // מסתיר את תצוגת המשחק
     document.getElementById('question-container').style.display = 'none';
     document.getElementById('hint-container').style.display = 'none';
     
-    // יוצר אלמנט חדש לכפתורי סיום
     const endGameContainer = document.createElement('div');
     endGameContainer.id = 'end-game-container';
     
-    // יוצר כותרת ניצחון
     const victoryTitle = document.createElement('h2');
-    victoryTitle.textContent = 'כל הכבוד! 🏆';
+    victoryTitle.textContent = 'מזל טוב! הרכבת את האישיות הראשונית המלאה! 🎉';
+    victoryTitle.style.fontSize = '28px';
+    victoryTitle.style.color = '#1a73e8';
+    victoryTitle.style.marginBottom = '20px';
+    victoryTitle.style.textAlign = 'center';
     
-    // יוצר תת-כותרת
-    const victorySubtitle = document.createElement('h3');
-    victorySubtitle.textContent = 'השלמת את כל השאלות בהצלחה!';
+    // הצגת התמונה המלאה
+    const fullImage = document.createElement('img');
+    fullImage.src = 'files/hani.png';
+    fullImage.alt = 'תמונת הפאזל המלאה';
+    fullImage.className = 'full-puzzle-image';
+    fullImage.style.maxWidth = '400px';
+    fullImage.style.margin = '20px auto';
+    fullImage.style.display = 'block';
+    fullImage.style.borderRadius = '10px';
+    fullImage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
     
-    // הוספת הסבר
-    const explanation = document.createElement('p');
-    explanation.textContent = 'תוכל לסיים את המשחק או לשחק שוב עם שאלות חדשות.';
-    
-    // מכיל את הכפתורים בשורה
     const buttonsContainer = document.createElement('div');
     buttonsContainer.className = 'buttons-container';
     
-    // יוצר כפתור סיום משחק
     const endGameButton = document.createElement('button');
     endGameButton.textContent = 'סיום משחק';
     endGameButton.className = 'game-button end';
     endGameButton.onclick = closeGame;
     
-    // יוצר כפתור שחק שוב
     const playAgainButton = document.createElement('button');
     playAgainButton.textContent = 'שחק שוב';
     playAgainButton.className = 'game-button again';
     playAgainButton.onclick = restartGame;
     
-    // הוספת הכפתורים למכיל הכפתורים
-    playAgainButton.className = 'game-button';
-    playAgainButton.style.padding = '1rem 2rem';
-    playAgainButton.style.background = '#28a745';
-    playAgainButton.style.color = 'white';
-    playAgainButton.style.border = 'none';
-    playAgainButton.style.borderRadius = '8px';
-    playAgainButton.style.cursor = 'pointer';
-    playAgainButton.style.fontWeight = 'bold';
-    playAgainButton.style.fontSize = '18px';
-    playAgainButton.style.transition = 'all 0.3s ease';
-    playAgainButton.onmouseover = function() { this.style.backgroundColor = '#218838'; };
-    playAgainButton.onmouseout = function() { this.style.backgroundColor = '#28a745'; };
-    playAgainButton.onclick = restartGame;
-    
-    // הוספת הכפתורים למכיל הכפתורים
     buttonsContainer.appendChild(endGameButton);
     buttonsContainer.appendChild(playAgainButton);
     
-    // מוסיף את הכפתורים לקונטיינר
     endGameContainer.appendChild(victoryTitle);
-    endGameContainer.appendChild(victorySubtitle);
-    endGameContainer.appendChild(explanation);
+    endGameContainer.appendChild(fullImage);
     endGameContainer.appendChild(buttonsContainer);
     
-    // מוסיף את הקונטיינר למשחק
     document.getElementById('game-container').appendChild(endGameContainer);
     
-    // אפקט קונפטי נוסף אחרי כמה שניות
     setTimeout(() => {
         confetti({
             particleCount: 100,
@@ -582,6 +565,44 @@ function getRandomEncouragement() {
         'מדהים! אתה מצליח מעולה!'
     ];
     return encouragements[Math.floor(Math.random() * encouragements.length)];
+}
+
+// פונקציה להצגת חלק פאזל
+function showPuzzlePart(partNumber) {
+    const puzzleContainer = document.getElementById('puzzle-container');
+    puzzleContainer.style.display = 'block';
+    
+    // יצירת רשת 3x3 לחלקי הפאזל
+    if (!puzzleContainer.querySelector('.puzzle-grid')) {
+        const grid = document.createElement('div');
+        grid.className = 'puzzle-grid';
+        grid.style.display = 'grid';
+        grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        grid.style.gap = '2px';
+        grid.style.maxWidth = '300px';
+        grid.style.margin = '20px auto';
+        puzzleContainer.appendChild(grid);
+    }
+    
+    const grid = puzzleContainer.querySelector('.puzzle-grid');
+    
+    // הוספת החלק החדש
+    const part = document.createElement('img');
+    part.src = `files/puzzle_parts/part_${partNumber}.png`;
+    part.alt = `חלק ${partNumber} של הפאזל`;
+    part.className = 'puzzle-part';
+    part.style.width = '100%';
+    part.style.height = 'auto';
+    part.style.border = '1px solid #ccc';
+    part.style.borderRadius = '4px';
+    
+    // חישוב המיקום ברשת
+    const row = Math.floor((partNumber - 1) / 3);
+    const col = (partNumber - 1) % 3;
+    part.style.gridRow = row + 1;
+    part.style.gridColumn = col + 1;
+    
+    grid.appendChild(part);
 }
 
 // הוספת מאזיני אירועים
